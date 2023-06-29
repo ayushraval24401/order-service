@@ -48,7 +48,7 @@ class OrderController {
 
       sendEmailQueue("email", emailData);
 
-      receiveEmailQueue("email-reply")
+      await receiveEmailQueue("email-reply")
         .then((receivedData: any) => {
           return res.status(receivedData?.status).json({
             message: receivedData?.message,
