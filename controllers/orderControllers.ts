@@ -2,9 +2,10 @@ import { Request, Response, NextFunction } from "express";
 import orderServices from "../services/orderServices";
 import { receiveEmailQueue, sendEmailQueue } from "../queues/orderQueue";
 import orderRepository from "../repositories/orderRepository";
+import ExtendedRequest from "../interfaces/requestInterface";
 
 class OrderController {
-  async GetAllOrdersController(req: any, res: Response, next: NextFunction) {
+  async GetAllOrdersController(req: ExtendedRequest, res: Response, next: NextFunction) {
     try {
       const userId = req.user;
 

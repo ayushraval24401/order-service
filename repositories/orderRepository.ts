@@ -18,7 +18,7 @@ class OrderRepository {
     return order;
   }
 
-  async create(total: number, userEmail: string, user: string, products: any) {
+  async create(total: number, userEmail: string, user: string, products: [string]) {
     const order = await OrderModel.create({
       totalPrice: total,
       products: products,
